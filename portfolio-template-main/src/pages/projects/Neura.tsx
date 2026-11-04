@@ -8,8 +8,12 @@ import TechnicalHighlights from '../../components/project/TechnicalHighlights';
 import { useT } from '../../contexts/LanguageContext';
 import { socialLinks } from '../../config/socialLinks';
 import { comingSoon } from '../../assets';
+import ImageCarousel from '../../components/ImageCarousel';
+import { getProjectImages } from '../../assets/projects';
 
 const featureIcons = [Boxes, MousePointerClick, Eye];
+
+const images = getProjectImages('neura');
 
 const Neura = () => {
   const t = useT();
@@ -24,6 +28,8 @@ const Neura = () => {
         githubUrl={socialLinks.repositories.projectTwo}
         features={p.features.map((f, i) => ({ icon: featureIcons[i], title: f.title, description: f.description }))}
       />
+
+      <ImageCarousel images={images} projectName="Neura IA" title={t.project.snapshots} />
 
       <ProjectSection title={t.project.overview}>
         <ProjectOverview paragraphs={p.overview} />

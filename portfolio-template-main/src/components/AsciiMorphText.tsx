@@ -9,7 +9,7 @@ const AsciiMorphText: React.FC<AsciiMorphTextProps> = ({ text }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const chars = '!<>-_\\/[]{}—=+*^?#________';
+    const chars = '!<>_\\/[]{}=+*^?#________';
     const letters = text.split('');
     
     if (!containerRef.current) return;

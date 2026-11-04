@@ -11,6 +11,9 @@ export const socialLinks = {
     projectTwo: import.meta.env.VITE_GITHUB_PROJECT2_URL,
     projectThree: import.meta.env.VITE_GITHUB_PROJECT3_URL,
     projectFour: import.meta.env.VITE_GITHUB_PROJECT4_URL,
+    escale: import.meta.env.VITE_GITHUB_ESCALE_URL || 'https://github.com/sarahzhf/escale',
+    // Leave empty to hide the Code button (private repository)
+    techTheTime: import.meta.env.VITE_GITHUB_TECHTHETIME_URL,
   },
   
   // Formatted display names (extracted from environment variables)

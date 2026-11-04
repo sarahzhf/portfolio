@@ -65,7 +65,7 @@ const Experience = () => {
                 <ul className="space-y-1">
                   {exp.description.map((item, i) => (
                     <li key={i} className="flex items-start">
-                      <span className="mr-2" style={{ color: themeColors.primary }}>•</span>
+                      <span className="mr-2 font-semibold" style={{ color: themeColors.primary }} aria-hidden="true">›</span>
                       <span className="text-sm" style={{ color: isDarkMode ? themeColors.colors.dark[200] : themeColors.colors.dark[600] }}>{item}</span>
                     </li>
                   ))}

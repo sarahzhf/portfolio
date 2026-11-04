@@ -1,9 +1,7 @@
-// Project icons module - add your project icon imports here
-// Example:
-// import MyProjectIcon from './MyProjectIcon.webp';
-//
-// export { MyProjectIcon };
-// export default { MyProjectIcon };
+// Project icons shown on the project cards and detail pages
+import fineaIcon from './finea.webp';
+import escaleIcon from './escale.webp';
+import techTheTimeIcon from './techthetime.webp';
 
-export {};
-export default {};
+export { fineaIcon, escaleIcon, techTheTimeIcon };
+export default { fineaIcon, escaleIcon, techTheTimeIcon };

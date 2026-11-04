@@ -8,8 +8,12 @@ import TechnicalHighlights from '../../components/project/TechnicalHighlights';
 import { useT } from '../../contexts/LanguageContext';
 import { socialLinks } from '../../config/socialLinks';
 import { comingSoon } from '../../assets';
+import ImageCarousel from '../../components/ImageCarousel';
+import { getProjectImages } from '../../assets/projects';
 
 const featureIcons = [BookOpen, Layers, UtensilsCrossed];
+
+const images = getProjectImages('foodex');
 
 const Foodex = () => {
   const t = useT();
@@ -24,6 +28,8 @@ const Foodex = () => {
         githubUrl={socialLinks.repositories.projectThree}
         features={p.features.map((f, i) => ({ icon: featureIcons[i], title: f.title, description: f.description }))}
       />
+
+      <ImageCarousel images={images} projectName="Foodex" title={t.project.snapshots} />
 
       <ProjectSection title={t.project.overview}>
         <ProjectOverview paragraphs={p.overview} />
