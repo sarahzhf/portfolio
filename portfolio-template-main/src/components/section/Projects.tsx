@@ -10,6 +10,8 @@ import { ExternalLink, Code, Heart, ChevronLeft, ChevronRight } from 'lucide-rea
 import { socialLinks } from '../../config/socialLinks';
 import { lightStars, darkStars, specialStars } from '../../assets/stars';
 import { comingSoon } from '../../assets';
+import { fineaIcon, escaleIcon, techTheTimeIcon } from '../../assets/project_icons';
+import { getProjectImages } from '../../assets/projects';
 
 const Projects = () => {
   const { isDarkMode } = useDarkMode();
@@ -27,7 +29,7 @@ const Projects = () => {
   // carousel state
   const [currentPage, setCurrentPage] = useState(0);
   const [direction, setDirection] = useState<'left' | 'right'>('right');
-  const projectsPerPage = 4;
+  const projectsPerPage = 6;
 
   const containerRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
@@ -229,10 +231,13 @@ const Projects = () => {
   }, [draggedStar]);
 
   // project data - these are the main cards
-  const projectConfig = [
-    { icon: comingSoon, detailsUrl: "/projects/finea", githubUrl: socialLinks.repositories.projectOne },
-    { icon: comingSoon, detailsUrl: "/projects/neura", githubUrl: socialLinks.repositories.projectTwo },
-    { icon: comingSoon, detailsUrl: "/projects/foodex", githubUrl: socialLinks.repositories.projectThree },
+  // same order as t.projects.items in config/translations.ts
+  const projectConfig: { icon: string; detailsUrl: string; githubUrl?: string; screenshots: string[] }[] = [
+    { icon: escaleIcon, detailsUrl: "/projects/escale", githubUrl: socialLinks.repositories.escale, screenshots: getProjectImages('escale') },
+    { icon: techTheTimeIcon, detailsUrl: "/projects/tech-the-time", githubUrl: socialLinks.repositories.techTheTime, screenshots: getProjectImages('techthetime') },
+    { icon: fineaIcon, detailsUrl: "/projects/finea", githubUrl: socialLinks.repositories.projectOne, screenshots: getProjectImages('finea') },
+    { icon: comingSoon, detailsUrl: "/projects/neura", githubUrl: socialLinks.repositories.projectTwo, screenshots: getProjectImages('neura') },
+    { icon: comingSoon, detailsUrl: "/projects/foodex", githubUrl: socialLinks.repositories.projectThree, screenshots: getProjectImages('foodex') },
   ];
   const projects = projectConfig.map((cfg, i) => ({ ...cfg, ...t.projects.items[i] }));
 
@@ -243,7 +248,7 @@ const Projects = () => {
   const currentProjects = projects.slice(startIndex, endIndex);
 
   // Create placeholder cards for "Coming Soon" projects
-  const placeholderCount = projectsPerPage - currentProjects.length;
+  const placeholderCount = currentProjects.length % 2;
   const placeholders = Array.from({ length: placeholderCount }, (_, i) => ({
     id: `placeholder-${i}`,
     isPlaceholder: true
@@ -431,6 +436,43 @@ const Projects = () => {
                 backgroundColor: themeColors.card.background,
                 border: `1px solid ${themeColors.card.border}`
               }} aria-label={`${project.title} project`}>
+                {project.screenshots.length === 0 && (
+                  <Link
+                    to={project.detailsUrl}
+                    className="flex items-center justify-center mx-4 mt-4 rounded-xl"
+                    style={{ height: '206px', background: isDarkMode ? 'rgba(255,255,255,0.04)' : themeColors.colors.pink[50] }}
+                    aria-label={`${project.title} details`}
+                  >
+                    <img
+                      src={project.icon}
+                      alt=""
+                      className="rounded-3xl object-contain shadow-md transition-transform duration-300 group-hover:scale-105"
+                      style={{ width: '120px', height: '120px' }}
+                      loading="lazy"
+                    />
+                  </Link>
+                )}
+                {project.screenshots.length > 0 && (
+                  <Link
+                    to={project.detailsUrl}
+                    className="block mx-4 mt-4 rounded-xl overflow-hidden"
+                    style={{ background: isDarkMode ? 'rgba(255,255,255,0.04)' : themeColors.colors.pink[50] }}
+                    aria-label={`${project.title} screenshots`}
+                  >
+                    <div className="flex justify-center gap-3 px-4 pt-4" style={{ height: '190px' }}>
+                      {project.screenshots.slice(0, 3).map((src, i) => (
+                        <img
+                          key={i}
+                          src={src}
+                          alt={`${project.title} screenshot ${i + 1}`}
+                          className="h-full w-auto rounded-t-xl object-cover object-top shadow-md transition-transform duration-300 group-hover:-translate-y-1"
+                          style={{ aspectRatio: '9 / 19', transitionDelay: `${i * 40}ms` }}
+                          loading="lazy"
+                        />
+                      ))}
+                    </div>
+                  </Link>
+                )}
                 <CardHeader>
                   <div className="flex items-start gap-3">
                     {project.icon && (
@@ -472,10 +514,12 @@ const Projects = () => {
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       {t.projects.details}
                     </Link>
-                    <a href={project.githubUrl} className="project-btn-outline flex items-center gap-1" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} source code on GitHub`}>
-                      <Code className="h-4 w-4" aria-hidden="true" />
-                      {t.projects.code}
-                    </a>
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} className="project-btn-outline flex items-center gap-1" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} source code on GitHub`}>
+                        <Code className="h-4 w-4" aria-hidden="true" />
+                        {t.projects.code}
+                      </a>
+                    )}
                   </div>
                 </CardContent>
               </Card>

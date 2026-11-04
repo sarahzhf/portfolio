@@ -41,7 +41,7 @@ npm run build
 
 ### 1. Personal Information
 
-**Name & Title** — Update your name in these files:
+**Name & Title**: Update your name in these files:
 
 | File | What to change |
 |------|---------------|
@@ -50,7 +50,7 @@ npm run build
 | `src/components/section/About.tsx` | Hero greeting text (`AsciiMorphText`) |
 | `src/components/Footer.tsx` | Copyright name |
 
-**Roles** — Edit the typewriter carousel roles in `src/components/section/About.tsx`:
+**Roles**: Edit the typewriter carousel roles in `src/components/section/About.tsx`:
 ```tsx
 const roles = [
   'Software Engineer',
@@ -88,7 +88,7 @@ Replace `src/assets/journal.PNG` with your own journal-style background image fo
 
 ### 4. Resume
 
-Place your resume PDF at `public/resume.pdf` — the Resume button in the About section and Footer link to this path.
+Place your resume PDF at `public/resume.pdf`: the Resume button in the About section and Footer link to this path.
 
 ### 5. Social Links & Environment Variables
 
@@ -104,11 +104,11 @@ VITE_GITHUB_PROJECT3_URL=https://github.com/yourusername/project-three
 VITE_GITHUB_PROJECT4_URL=https://github.com/yourusername/project-four
 ```
 
-These are consumed in `src/config/socialLinks.ts` — add more repository entries there as needed.
+These are consumed in `src/config/socialLinks.ts`: add more repository entries there as needed.
 
 ### 6. Projects
 
-**Gallery cards** — Edit the projects array in `src/components/section/Projects.tsx`:
+**Gallery cards**: Edit the projects array in `src/components/section/Projects.tsx`:
 ```tsx
 {
   title: "Your Project",
@@ -120,23 +120,23 @@ These are consumed in `src/config/socialLinks.ts` — add more repository entrie
 }
 ```
 
-**Project icons** — Add icon images to `src/assets/project_icons/` and register them in `src/assets/project_icons/index.ts`:
+**Project icons**: Add icon images to `src/assets/project_icons/` and register them in `src/assets/project_icons/index.ts`:
 ```ts
 import YourProjectIcon from './YourProjectIcon.webp';
 export { YourProjectIcon };
 ```
 
-**Project detail pages** — Create a detail page for each project at `src/pages/projects/YourProject.tsx`. Use the available components:
-- `ProjectLayout` — Page wrapper with dark mode theming
-- `ProjectHeader` — Icon, title, subtitle, GitHub link, feature grid
-- `ImageCarousel` — Screenshot carousel with navigation
-- `ProjectOverview` — Multi-paragraph description
-- `TechStack` — Technology badges
-- `TechnicalHighlights` — Bulleted achievements list
+**Project detail pages**: Create a detail page for each project at `src/pages/projects/YourProject.tsx`. Use the available components:
+- `ProjectLayout`: Page wrapper with dark mode theming
+- `ProjectHeader`: Icon, title, subtitle, GitHub link, feature grid
+- `ImageCarousel`: Screenshot carousel with navigation
+- `ProjectOverview`: Multi-paragraph description
+- `TechStack`: Technology badges
+- `TechnicalHighlights`: Bulleted achievements list
 
-**Project snapshots** — Add screenshot images to `src/assets/project_snapshots/your-project/` and import them in `src/assets/index.ts`.
+**Project snapshots**: Add screenshot images to `src/assets/project_snapshots/your-project/` and import them in `src/assets/index.ts`.
 
-**Routing** — Register your project pages in `src/App.tsx`:
+**Routing**: Register your project pages in `src/App.tsx`:
 ```tsx
 const YourProject = lazy(() => import('./pages/projects/YourProject'))
 // ...
@@ -161,8 +161,8 @@ Edit `src/components/section/Experience.tsx` with your work history:
 ### 8. Certifications
 
 Edit `src/components/section/Certifications.tsx` with your credentials. The section supports two types:
-- **Badges** (e.g., AWS) — with image, title, subtitle, and Credly URL
-- **Credentials** (e.g., CITI) — with image, title, issuer, dates, and credential ID/URL
+- **Badges** (e.g., AWS): with image, title, subtitle, and Credly URL
+- **Credentials** (e.g., CITI): with image, title, issuer, dates, and credential ID/URL
 
 Replace badge images in `src/assets/badges/` with your own.
 

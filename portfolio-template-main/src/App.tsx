@@ -12,6 +12,8 @@ import './App.css'
 const Finea = lazy(() => import('./pages/projects/Finea'))
 const Neura = lazy(() => import('./pages/projects/Neura'))
 const Foodex = lazy(() => import('./pages/projects/Foodex'))
+const Escale = lazy(() => import('./pages/projects/Escale'))
+const TechTheTime = lazy(() => import('./pages/projects/TechTheTime'))
 const Contact = lazy(() => import('./pages/Contact'))
 
 // Lazy load below-the-fold components for better initial load
@@ -101,6 +103,8 @@ function AppContent() {
               <Route path="/projects/finea" element={<Finea />} />
               <Route path="/projects/neura" element={<Neura />} />
               <Route path="/projects/foodex" element={<Foodex />} />
+              <Route path="/projects/escale" element={<Escale />} />
+              <Route path="/projects/tech-the-time" element={<TechTheTime />} />
             </Routes>
           </Suspense>
         </main>
