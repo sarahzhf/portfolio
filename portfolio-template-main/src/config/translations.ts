@@ -4,7 +4,7 @@
 export type Lang = 'fr' | 'en';
 
 const en = {
-  nav: { about: 'About', projects: 'Projects', experience: 'Experience', skills: 'Skills' },
+  nav: { about: 'About', projects: 'Projects', experience: 'Experience', skills: 'Skills', education: 'Education' },
 
   hero: {
     greeting: "Hi, I'm Sarah Zahaf",
@@ -253,7 +253,7 @@ const en = {
 };
 
 const fr: typeof en = {
-  nav: { about: 'À propos', projects: 'Projets', experience: 'Expériences', skills: 'Compétences' },
+  nav: { about: 'À propos', projects: 'Projets', experience: 'Expériences', skills: 'Compétences', education: 'Formation' },
 
   hero: {
     greeting: 'Bonjour, je suis Sarah Zahaf',

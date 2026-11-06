@@ -13,7 +13,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, children, classN
   const themeColors = useThemeColors();
 
   return (
-    <div className={`rounded-lg shadow-lg p-8 mb-8 ${className}`} style={{ 
+    <div className={`rounded-lg shadow-lg p-5 sm:p-8 mb-8 ${className}`} style={{ 
       backgroundColor: themeColors.card.background,
       border: `1px solid ${themeColors.card.border}`
     }}>

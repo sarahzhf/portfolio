@@ -54,7 +54,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="min-h-screen py-20 relative" style={{
+    <section ref={sectionRef} id="skills" className="sm:min-h-screen py-10 sm:py-20 relative" style={{
       background: themeColors.background.sections?.skills || themeColors.background.gradient,
       transition: 'background 0.3s ease-in-out'
     }}>
@@ -69,13 +69,12 @@ const Skills = () => {
           zIndex: 1
         }}
       />
-      <div className="container mx-auto px-6 relative" style={{ zIndex: 2 }}>
-        <h2 className="text-4xl font-bold text-center mb-12" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.skills.title}</h2>
+      <div className="container mx-auto px-4 sm:px-6 relative" style={{ zIndex: 2 }}>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-12" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.skills.title}</h2>
         <div
           ref={domeContainerRef}
-          className="relative w-full"
+          className="relative w-full h-[440px] sm:h-[600px]"
           style={{
-            height: '600px',
             transform: `scale(${scale})`,
             transformOrigin: 'center center',
             willChange: 'transform',

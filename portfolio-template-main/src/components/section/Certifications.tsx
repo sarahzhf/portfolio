@@ -17,14 +17,14 @@ const Certifications = () => {
       background: themeColors.background.sections?.certifications || themeColors.background.gradient,
       transition: 'background 0.3s ease-in-out'
     }}>
-      <div className="container mx-auto px-6 relative" style={{ zIndex: 2 }}>
-        <h2 className="text-4xl font-bold text-center mb-8" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.education.title}</h2>
+      <div className="container mx-auto px-4 sm:px-6 relative" style={{ zIndex: 2 }}>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.education.title}</h2>
 
         <div className="max-w-4xl mx-auto space-y-4">
           {education.map((item, index) => (
             <div
               key={index}
-              className="rounded-lg p-6 transition-all duration-300 hover:shadow-lg"
+              className="rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg"
               style={{
                 backgroundColor: themeColors.card.background,
                 border: `1px solid ${themeColors.card.border}`,
