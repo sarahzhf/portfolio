@@ -21,7 +21,8 @@ const Navigation = () => {
     { id: 'about', label: t.nav.about },
     { id: 'projects', label: t.nav.projects },
     { id: 'experience', label: t.nav.experience },
-    { id: 'skills', label: t.nav.skills }
+    { id: 'skills', label: t.nav.skills },
+    { id: 'education', label: t.nav.education }
   ], [t]);
 
   useEffect(() => {
@@ -190,11 +191,11 @@ const Navigation = () => {
           right: 0,
           flexDirection: 'column',
           padding: '1rem',
-          background: themeColors.navigation.mobile,
+          background: isDarkMode ? 'rgb(10, 15, 27)' : 'rgb(254, 248, 250)',
           borderTop: `1px solid ${themeColors.navigation.border}`,
-          maxHeight: isMobileMenuOpen ? '400px' : '0',
-          overflow: isMobileMenuOpen ? 'visible' : 'hidden',
-          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          maxHeight: isMobileMenuOpen ? 'calc(100vh - 70px)' : '0',
+          overflowY: isMobileMenuOpen ? 'auto' : 'hidden',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           opacity: isMobileMenuOpen ? 1 : 0,
           boxShadow: isMobileMenuOpen
             ? `0 8px 25px ${themeColors.navigation.shadowScrolled}`

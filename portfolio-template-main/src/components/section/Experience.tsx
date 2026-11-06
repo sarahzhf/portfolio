@@ -37,25 +37,25 @@ const Experience = () => {
           zIndex: 1
         }}
       />
-      <div className="container mx-auto px-6 relative" style={{ zIndex: 2 }}>
-        <h2 className="text-4xl font-bold text-center mb-6" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.experience.title}</h2>
+      <div className="container mx-auto px-4 sm:px-6 relative" style={{ zIndex: 2 }}>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.experience.title}</h2>
 
         <div className="max-w-4xl mx-auto space-y-4">
           {experiences.map((exp, index) => (
             <Card key={index} className="border-2 border-pink-100 dark:border-gray-700 hover:border-pink-200 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-lg bg-white/95 dark:bg-gray-800/95">
               <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-2xl" style={{ color: isDarkMode ? themeColors.colors.pink[300] : themeColors.colors.pink[400] }}>{exp.title}</CardTitle>
-                    <p className="text-lg font-semibold text-gray-700 dark:text-gray-400 mt-1">{exp.company}</p>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4">
+                  <div className="min-w-0">
+                    <CardTitle className="text-xl sm:text-2xl" style={{ color: isDarkMode ? themeColors.colors.pink[300] : themeColors.colors.pink[400] }}>{exp.title}</CardTitle>
+                    <p className="text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-400 mt-1">{exp.company}</p>
                   </div>
-                  <div className="text-right">
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-1">
-                      <Calendar className="h-4 w-4" />
+                  <div className="sm:text-right sm:shrink-0">
+                    <div className="flex items-center sm:justify-end gap-2 text-gray-600 dark:text-gray-400 mb-1">
+                      <Calendar className="h-4 w-4 shrink-0" />
                       <span className="text-sm">{exp.period}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                      <MapPin className="h-4 w-4" />
+                    <div className="flex items-center sm:justify-end gap-2 text-gray-600 dark:text-gray-400">
+                      <MapPin className="h-4 w-4 shrink-0" />
                       <span className="text-sm">{exp.location}</span>
                     </div>
                   </div>

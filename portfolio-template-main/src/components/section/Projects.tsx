@@ -397,7 +397,7 @@ const Projects = () => {
       <TooltipProvider delayDuration={200}>
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center justify-center gap-1 mb-4">
-            <h2 className="text-4xl font-bold" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.projects.title}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>{t.projects.title}</h2>
             <Tooltip>
               <TooltipTrigger asChild>
                 <button 

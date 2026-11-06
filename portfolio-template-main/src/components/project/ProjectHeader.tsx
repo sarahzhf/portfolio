@@ -26,12 +26,12 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
   const t = useT();
 
   return (
-    <div className="rounded-lg shadow-lg p-8 mb-8" style={{ backgroundColor: themeColors.card.background }}>
-      <div className="flex items-start gap-6 mb-6">
-        <img src={icon} alt={title} className="w-24 h-24 rounded-2xl object-cover flex-shrink-0" loading="lazy" width="96" height="96" />
-        <div className="flex-1">
-          <h1 className="text-4xl font-bold mb-2" style={{ color: themeColors.text.primary }}>{title}</h1>
-          <p className="text-lg" style={{ color: themeColors.text.secondary }}>{subtitle}</p>
+    <div className="rounded-lg shadow-lg p-5 sm:p-8 mb-8" style={{ backgroundColor: themeColors.card.background }}>
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+        <img src={icon} alt={title} className="w-16 h-16 sm:w-24 sm:h-24 rounded-2xl object-cover flex-shrink-0" loading="lazy" width="96" height="96" />
+        <div className="flex-1 min-w-0">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2 break-words" style={{ color: themeColors.text.primary }}>{title}</h1>
+          <p className="text-base sm:text-lg" style={{ color: themeColors.text.secondary }}>{subtitle}</p>
           {githubUrl && (
           <div className="flex gap-4 mt-4">
             <a
@@ -55,7 +55,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
 
       {/* Key Features */}
       <div className="border-t pt-6" style={{ borderColor: themeColors.card.border }}>
-        <h2 className="text-2xl font-semibold mb-4" style={{ color: themeColors.text.primary }}>{t.project.keyFeatures}</h2>
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4" style={{ color: themeColors.text.primary }}>{t.project.keyFeatures}</h2>
         <div className="grid md:grid-cols-2 gap-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
